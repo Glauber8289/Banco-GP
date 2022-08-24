@@ -7,12 +7,19 @@ import java.util.Scanner;
 public class Conta {
     //atributos
     public int NumConta;
-    protected String Tipo;
+    public String Tipo;
     private String Dono;
-    private float Saldo;
+    public float Saldo;
     private boolean Status;
     //metodos personalizados
-    
+    public void estadoAtual(){
+        System.out.println("----------------------------");
+        System.out.println("Conta " + this.getNumConta());
+        System.out.println("Tipo " + this.getTipo());
+        System.out.println("Dono " + this.getDono());
+         System.out.println("Saldo " + this.getSaldo());
+        System.out.println("Status " + this.getStatus());
+    }
     
 //Criando metodos getters e setters para os atributos
     public void setNumConta(int n){
@@ -50,17 +57,17 @@ public class Conta {
     
     
     public void abrirConta(String t){
-      this.setTipo(t);
-      this.setStatus(true);
-      if(t == "CC"){
+        this.getTipo();
+        this.setStatus(true);
+        if("CC".equals(t)){
          this.setSaldo(50);
-     } else if (t == "CP"){
-      this.setSaldo(150);  
-    }
+      } else if ("CP".equals(t)){
+          this.setSaldo(150);
+      
         System.out.println("Conta aberta com sucesso !");
     }
-     
-    public  void fecharConta(){
+    }     
+    public void fecharConta(){
     if (this.getSaldo() > 0) {
         System.out.println("Conta não pode ser fechada pois temos debitos a serem utilizados");
     }  else if (this.getSaldo () < 0){
@@ -105,24 +112,13 @@ public class Conta {
         }
     }
      //metodo construtor
-    public void Conta(){
-    this.Saldo = 0;
-    this.Status = false;
+    public Conta(){
+        this.Saldo=0;
+        this.Status=false;
+    
+    
     }       
-     public void Receber (){
-     //Nome da conta
-     Scanner read = new Scanner (System.in);
-     String Dono;
-     System.out.println("Digite um nome para conta");
-     Dono=read.nextLine();
-     //Tipo da conta 
-     String Tipo;
-        System.out.println("Digite CC para conta conrrente e CP para poupanca."
-                + "informacao importante se na CC voce ganha 50, na CP voce ganha 150");
-      Tipo= read.nextLine();
-     
      
      
      }
 
-}
