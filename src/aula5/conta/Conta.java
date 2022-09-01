@@ -1,9 +1,7 @@
 
 package aula5.conta;
 
-import static java.lang.reflect.Array.get;
-import static java.nio.file.Paths.get;
-import java.util.Scanner;
+
 public class Conta {
     //atributos
     public int NumConta;
@@ -14,8 +12,9 @@ public class Conta {
     //metodos personalizados
     public void estadoAtual(){
         System.out.println("----------------------------");
-        System.out.println("Conta " + this.getNumConta());
-        System.out.println("Tipo " + this.getTipo());
+        System.out.println("Parabens sua conta foi criada com sucesso!!!");
+        System.out.println("Conta  " + this.getNumConta());
+        System.out.println("Tipo de Conta " + this.getTipo());
         System.out.println("Dono " + this.getDono());
          System.out.println("Saldo " + this.getSaldo());
         System.out.println("Status " + this.getStatus());
@@ -63,7 +62,7 @@ public class Conta {
          this.setSaldo(50);
       } else if ("CP".equals(t)){
           this.setSaldo(150);
-      
+     
         System.out.println("Conta aberta com sucesso !");
     }
     }     
