@@ -88,7 +88,7 @@ public class Conta {
        if (this.getStatus()) {
            if (this.getSaldo() >= v){
                this.setSaldo(this.getSaldo() -v);
-               System.out.println("Saque realizado na com de" + this.getDono());
+               System.out.println("Saque realizado na conta de" + this.getDono());
             } else {
                System.out.println("Saldo insuficiente para saque");
            }
@@ -98,9 +98,9 @@ public class Conta {
     }
     public void pagarMensal (){
         int v = 0;
-        if (this.getTipo()== "CC"){
+        if ("CC".equals(this.getTipo())){
             v = 12;
-        } else if (this.getTipo()== "CP") {
+        } else if ("CP".equals(this.getTipo())) {
             v = 20;
            } 
         if (this.getStatus()){
