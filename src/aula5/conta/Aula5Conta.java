@@ -10,7 +10,8 @@ public class Aula5Conta {
       //Nome para conta
 
 int op;
- int oc;
+int oc;
+int nu;
   ContaPoupanca CP = null;
   ContaCorrente CC = null;
 do{      
@@ -22,32 +23,32 @@ System.out.println("5.Sair");
 
 op=input.nextInt(); 
 
-         switch (op) {
-             case 1 -> {
-                 System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente");
-                 oc=input.nextInt();
-                 if(oc==1){
-                     CP = new ContaPoupanca();
-                 }else{
-                     CC = new ContaCorrente();
-                 }            System.out.println("Conta criada com sucesso!");
-             }
-             case 2 -> {
-             }
-             case 3 -> {
-             }
-             case 4 -> {
-                 System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente ?");
-                 oc = input.nextInt();
-                 if(oc==1){
-                     System.out.println("Saldo da conta Poupanca e: " + CP.getSaldo());
-                 }else{
-                     System.out.println("Saldo da sua conta Corrente e: " + CC.getSaldo());
-                 }
-             }
-             default -> {
-             }
-         }
+if(op==1){
+    
+    System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente");
+    oc=input.nextInt();
+    if(oc==1){
+       System.out.println("Digite o numero da conta por gentileza");
+       nu=input.nextInt();
+       
+       CP = new ContaPoupanca();
+     }else{
+         System.out.println("Digite o numero da conta por gentileza");
+         nu=input.nextInt();
+         CC = new ContaCorrente(); 
+    }
+     System.out.println("Conta criada com sucesso!");
+    } else if(op==2){
+    }else if(op==3){
+    }else if(op==4){
+        System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente ?");
+        oc = input.nextInt();
+        if(oc==1){
+            System.out.println("Saldo da conta Poupanca e: " + CP.getSaldo());
+        }else{
+            System.out.println("Saldo da sua conta Corrente e: " + CC.getSaldo());
+            }
+          }
     }while (op!=5);     
   
     
