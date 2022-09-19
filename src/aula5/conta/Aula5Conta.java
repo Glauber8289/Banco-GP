@@ -1,59 +1,38 @@
 package aula5.conta;
 
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Aula5Conta {
 
     public static void main(String[] args) {
-     Scanner input = new Scanner (System.in);
-      //Nome para conta
-
-int op;
-int oc;
-int nu;
-  ContaPoupanca CP = null;
-  ContaCorrente CC = null;
-do{      
-System.out.println("1.Abrir conta");
-System.out.println("2.Sacar");
-System.out.println("3.Depositar");
-System.out.println("4.Saldo");
-System.out.println("5.Sair");
-
-op=input.nextInt(); 
-
-if(op==1){
+      String nome;
+        double inicial;
+        Scanner entrada = new Scanner(System.in);
+        Random numero = new Random();
+        int conta = 1 + numero.nextInt(9999);
     
-    System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente");
-    oc=input.nextInt();
-    if(oc==1){
-       System.out.println("Digite o numero da conta por gentileza");
-       nu=input.nextInt();
-       
-       CP = new ContaPoupanca();
-     }else{
-         System.out.println("Digite o numero da conta por gentileza");
-         nu=input.nextInt();
-         CC = new ContaCorrente(); 
+        //Obtendo os dados iniciais do Cliente
+        System.out.println("Cadastrando novo cliente.");
+        System.out.print("Entre com seu nome: ");
+        nome = entrada.nextLine();
+        
+        System.out.print("Entre com o valor inicial depositado na conta: ");
+        inicial = entrada.nextDouble();
+        
+        //Criando a conta de um cliente
+        Conta minhaConta = new Conta(nome, conta, inicial);
+        minhaConta.iniciar();
+        
+        
     }
-     System.out.println("Conta criada com sucesso!");
-    } else if(op==2){
-    }else if(op==3){
-    }else if(op==4){
-        System.out.println("Qual o tipo de Conta ?\n1.Poupanca\n2.Corrente ?");
-        oc = input.nextInt();
-        if(oc==1){
-            System.out.println("Saldo da conta Poupanca e: " + CP.getSaldo());
-        }else{
-            System.out.println("Saldo da sua conta Corrente e: " + CC.getSaldo());
-            }
-          }
-    }while (op!=5);     
-  
     
- } 
-}    
+}
+   
+
+     
+    
    
                   
                    
@@ -76,9 +55,8 @@ if(op==1){
       
         
         
+              
         
-       
-        
-    }
     
-}
+    
+
